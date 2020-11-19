@@ -1,0 +1,10 @@
+<launch>
+    <!-- amcl -->
+  <node pkg="amcl" name="amcl" type="amcl" output="screen">
+    <!-- load amcl_params -->
+    <rosparam file="$(find agv_amcl)/config/amcl_params.yaml" command="load" />
+    <!-- change scan_topic name -->
+    <!--<remap from="scan" to="scan_multi" />-->
+  </node>
+
+</launch>

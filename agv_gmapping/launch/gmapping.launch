@@ -1,0 +1,13 @@
+<launch>
+    <!-- args -->
+  <arg name="scan_topic" default="scan_multi" />
+
+    <!-- gmapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen"> 
+    <!-- load gmapping_params -->
+    <rosparam file="$(find agv_gmapping)/config/gmapping_params.yaml" command="load" />
+    <!-- change scan_topic name -->
+    <!--<remap from="scan" to="$(arg scan_topic)"/>-->
+  </node>
+
+</launch>
