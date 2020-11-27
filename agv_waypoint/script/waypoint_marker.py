@@ -79,8 +79,6 @@ def marker_pub():
                 marker_data.color.g = 0.0
                 marker_data.color.b = 0.0
                 marker_data.color.a = 1.0
-                marker_data.scale.x = 1.0
-                marker_data.scale.y = 1.0
                 marker_data.scale.z = 1.0
 
                 marker_data.lifetime = rospy.Duration()
