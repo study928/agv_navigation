@@ -10,7 +10,7 @@ def marker_pub():
     waypoint_pub = rospy.Publisher('waypoint_marker', MarkerArray, queue_size=10)
 
     rate = rospy.Rate(10)
-    csv_name = rospy.get_param("~csv_name","1203.csv") # csvファイル名 
+    csv_name = rospy.get_param("~csv_name","1203.csv") # csvファイル名 rosparam
 
     while not rospy.is_shutdown():
         marker_array = MarkerArray()

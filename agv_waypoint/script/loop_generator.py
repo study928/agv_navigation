@@ -17,7 +17,7 @@ class SaveWp():
         self.result_sub = rospy.Subscriber("/move_base/result", MoveBaseActionResult, self.result_callback)
 
         self.currnt_path = os.getcwd() # 現在のディレクトリ取得
-        self.csv_name = rospy.get_param("~csv_name","1203.csv") # csvファイル名
+        self.csv_name = rospy.get_param("~csv_name","1203.csv") # csvファイル名 rosparam
         self.file_path = os.path.join(self.currnt_path, self.csv_name) # currnt_path + csv_name
 
         self.x, self.y, self.goal_x, self.goal_y = 0.0, 0.0, 0.0, 0.0 # ロボットの位置を初期化
@@ -29,7 +29,9 @@ class SaveWp():
     def result_callback(self, result_msg):
         self.status = result_msg.status.status
         goal_data = [self.count, 1, self.goal_x, self.goal_y, 0, 0,
-                     0, self.goal_qz, self.goal_qw]
+                     0, self.goal_qz, self.goal_qw] # [num flag x y z qx qy qz qw]
+        
+        # robotがgoalしたらファイル書き込み
         if self.status == 3:
             with open(self.csv_name, "a") as f:
                 writer = csv.writer(f)
