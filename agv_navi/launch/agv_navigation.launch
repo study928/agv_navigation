@@ -1,6 +1,6 @@
 <launch>
     <!-- rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv_navi)/rviz/map.rviz" required="true" />
+  <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv_navi)/rviz/map.rviz" required="true" />-->
     <!-- map_server -->
   <include file="$(find agv_maps)/launch/map_server.launch" />
     <!-- amcl -->

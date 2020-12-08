@@ -1,0 +1,4 @@
+<launch>
+    <!-- rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv_navi)/rviz/map.rviz" required="true" />
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+    <!-- args -->
+  <arg name="csv_name" default="1204.csv"/>
+
+    <!-- waypoint marker node -->
+  <node pkg="agv_waypoint" name="waypoint_marker" type="loop_marker.py" output="screen">
+    <param name="csv_name" value="$(arg csv_name)" />
+  </node>
+    <!-- waypoint navigation node -->
+  <node pkg="agv_waypoint" name="waypoint_navi" type="loop_navigation.py" output="screen">
+    <param name="csv_name" value="$(arg csv_name)" />
+  </node>
+</launch>
